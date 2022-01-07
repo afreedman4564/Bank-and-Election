@@ -13,11 +13,8 @@ with open(csvpath) as csvfile:
     # CSV reader function to apply delimiter and allow variables to be read as a list
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    # print(csvreader)
-
     # Read the header row first
     csv_header = next(csvreader)
-    # print(f"CSV Header: {csv_header}")
 
     # initialize counters, lists and variables to call on later
     mth_cnt = 0
@@ -81,7 +78,7 @@ with open(csvpath) as csvfile:
     # convert the tuple to a list
     chg_zip_to_list = list(chg_zip)
 
-    # since it we have enough observations without the 0. Thus, treating as outlier.
+    # grab max and min profit/loss change
     max_chg  = max(profLoss_chg)
     min_chg = min(profLoss_chg)
 
